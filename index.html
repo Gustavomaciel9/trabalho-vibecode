@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big Party — a festa que ocupa a cidade inteira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#E6007E;--blue:#2A2CF0;--sun:#FFD23F;--lilac:#F3E8FF;--ink:#1B1464;--white:#fff;
+--display:"Bagel Fat One","Arial Rounded MT Bold","Trebuchet MS",sans-serif;--body:"Figtree","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1.0625rem/1.6 var(--body);color:var(--ink);background:var(--lilac)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.95}
+.btn{display:inline-block;background:var(--sun);color:var(--ink);font:800 1.1rem var(--body);padding:.9rem 1.8rem;border:3px solid var(--ink);border-radius:999px;text-decoration:none;box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+header.top{background:var(--pink);color:var(--white)}
+header.top nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;font-weight:800}
+header.top nav div{display:flex;gap:1.4rem}
+header.top a{text-decoration:none}
+.logo{font-family:var(--display);font-size:1.4rem}
+.hero{background:var(--pink);color:var(--white);padding:2rem 0 4.5rem;overflow:hidden}
+.hero h1{font-size:clamp(5.5rem,26vw,19rem);letter-spacing:-.02em}
+.hero h1 span{display:inline-block;animation:pop .7s cubic-bezier(.3,1.6,.5,1) both}
+.hero h1 .big{color:var(--sun);-webkit-text-stroke:0}
+.hero h1 span:nth-child(2){animation-delay:.08s}.hero h1 span:nth-child(3){animation-delay:.16s}
+.hero h1 .l2 span{color:var(--white)}
+@keyframes pop{from{transform:translateY(60%) scale(.6) rotate(-8deg);opacity:0}}
+.hero-foot{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:center;justify-content:space-between;margin-top:1.5rem}
+.hero-foot p{font-size:1.4rem;font-weight:600;max-width:24ch;line-height:1.3}
+.sticker{position:absolute;right:6%;top:9rem;background:var(--blue);color:var(--white);width:9rem;height:9rem;border-radius:50%;display:grid;place-items:center;text-align:center;font:400 1.25rem/1.05 var(--display);transform:rotate(12deg);border:3px solid var(--ink)}
+.hero{position:relative}
+.marquee{background:var(--ink);color:var(--sun);overflow:hidden;white-space:nowrap;padding:.8rem 0;font:400 1.6rem var(--display)}
+.marquee div{display:inline-block;animation:run 24s linear infinite}
+@keyframes run{to{transform:translateX(-50%)}}
+section{padding:5rem 0}
+section h2{font-size:clamp(2.6rem,7vw,4.8rem);margin-bottom:2rem;color:var(--blue)}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.info div{background:var(--white);border:3px solid var(--ink);border-radius:2rem;padding:1.6rem}
+.info div:nth-child(2){background:var(--sun)}
+.info div:nth-child(3){background:var(--blue);color:var(--white)}
+.info h3{font-size:2rem;margin-bottom:.6rem}
+.lineup{background:var(--blue);color:var(--white)}
+.lineup h2{color:var(--sun)}
+.lineup ul{list-style:none;padding:0}
+.lineup li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;border-top:3px solid var(--sun);padding:1rem 0;font:400 clamp(1.8rem,5vw,3.4rem) var(--display)}
+.lineup li small{font:600 1rem var(--body);white-space:nowrap;opacity:.9}
+.tickets{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;align-items:start}
+.ticket{background:var(--white);border:3px solid var(--ink);border-radius:1.5rem;padding:1.6rem}
+.ticket.hot{background:var(--pink);color:var(--white);transform:rotate(-1.5deg)}
+.ticket .price{font:400 3.2rem var(--display);margin:.4rem 0}
+.ticket p{margin-bottom:1.2rem}
+details{border-bottom:3px solid var(--ink);padding:1rem 0;max-width:720px}
+summary{font-weight:800;font-size:1.2rem;cursor:pointer}
+details p{margin-top:.6rem}
+footer{background:var(--ink);color:var(--white);padding:3rem 0;text-align:center}
+footer .big{font:400 clamp(2.4rem,8vw,5rem) var(--display);color:var(--sun);margin-bottom:1.2rem}
+@media(max-width:700px){.sticker{display:none}header.top nav div{gap:.9rem;font-size:.95rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><nav><a class="logo" href="#">Big Party</a>
+<div><a href="#info">A festa</a><a href="#lineup">Line-up</a><a href="#ingressos">Ingressos</a><a href="#faq">Dúvidas</a></div></nav></div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+<h1 aria-label="Big Party"><span class="big" aria-hidden="true"><span>B</span><span>I</span><span>G</span></span><br><span class="l2" aria-hidden="true"><span>Party</span></span></h1>
+<div class="sticker" aria-hidden="true">12h de festa<br>sem parar</div>
+<div class="hero-foot"><p>Uma noite que só cabe em letras grandes.</p><a class="btn" href="#ingressos">Garantir meu ingresso</a></div>
+</div></div>
+
+<div class="marquee" aria-hidden="true"><div>Big Party &nbsp;★&nbsp; Big som &nbsp;★&nbsp; Big pista &nbsp;★&nbsp; Big pessoas &nbsp;★&nbsp; Big Party &nbsp;★&nbsp; Big som &nbsp;★&nbsp; Big pista &nbsp;★&nbsp; Big pessoas &nbsp;★&nbsp; Big Party &nbsp;★&nbsp; Big som &nbsp;★&nbsp; Big pista &nbsp;★&nbsp; Big pessoas &nbsp;★&nbsp;</div></div>
+
+<section id="info"><div class="wrap"><h2>Anota aí</h2>
+<div class="info">
+<div><h3>Sábado, 14 de novembro</h3><p>Portões abertos às 18h. A última música toca às 6h da manhã.</p></div>
+<div><h3>Galpão Central</h3><p>Rua da Pista, 1000, São Paulo. A 5 minutos a pé do metrô.</p></div>
+<div><h3>Maiores de 18</h3><p>Leve um documento com foto. Sem ele, não entra.</p></div>
+</div></div></section>
+
+<section class="lineup" id="lineup"><div class="wrap"><h2>Quem toca</h2>
+<ul><li>DJ Confete <small>18h às 20h</small></li><li>Banda Balão <small>20h às 22h</small></li><li>Mc Serpentina <small>22h às 00h</small></li><li>Big Closing <small>00h às 06h</small></li></ul>
+<p style="margin-top:1.5rem;font-weight:600">Nomes fictícios, para esta atividade.</p></div></section>
+
+<section id="ingressos"><div class="wrap"><h2>Ingressos</h2>
+<div class="tickets">
+<div class="ticket"><h3>1º lote</h3><div class="price">R$ 60</div><p>Pista inteira. Esgotado quando bater 500.</p><a class="btn" href="#">Comprar 1º lote</a></div>
+<div class="ticket hot"><h3>Big combo</h3><div class="price">R$ 140</div><p>Pista, bebida na entrada e fila rápida.</p><a class="btn" href="#">Comprar Big combo</a></div>
+<div class="ticket"><h3>Grupo de 5</h3><div class="price">R$ 250</div><p>Cinco ingressos pelo preço de quatro.</p><a class="btn" href="#">Comprar para o grupo</a></div>
+</div></div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap"><h2>Dúvidas</h2>
+<details><summary>Posso entrar e sair?</summary><p>Pode. Peça a pulseira de retorno na saída.</p></details>
+<details><summary>Tem estacionamento?</summary><p>Não. Vá de metrô ou aplicativo de transporte.</p></details>
+<details><summary>Dá para devolver o ingresso?</summary><p>Sim, até 7 dias antes da festa, com reembolso total.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap"><div class="big">Te vejo na pista.</div><a class="btn" href="#ingressos">Garantir meu ingresso</a></div></footer>
+</body>
+</html>
